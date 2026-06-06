@@ -18,7 +18,10 @@ class Actor(nn.Module):
 
     def distribution(self, feat):
         mean = torch.tanh(self.net(feat))
-        std  = self.log_std.exp().expand_as(mean)
+        # Clamp log_std to (-4, 0): std in [exp(-4)≈0.018, exp(0)=1.0].
+        # Prevents too-peaky distributions (log_p → -inf) and too-wide
+        # ones (log_p ≈ 0, no gradient signal) that both cause actor explosion.
+        std  = self.log_std.clamp(-4, 0).exp().expand_as(mean)
         return Normal(mean, std)
 
 
