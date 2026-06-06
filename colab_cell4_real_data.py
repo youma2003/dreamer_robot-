@@ -17,7 +17,7 @@
 # ─────────────────────────────────────────────────────────────────────────
 
 # ── 0 · config (edit these) ──────────────────────────────────────────── #
-REPO_URL     = "https://github.com/SalmaZaafrani/dreamer_robot.git"
+REPO_URL     = "https://github.com/youma2003/dreamer_robot-.git"
 MAX_EPISODES = 500      # total episodes to load (pollen + bridge top-up)
 IMAGE_SIZE   = 64       # must match your model config
 CACHE_DIR    = "/content/bridge_cache"
