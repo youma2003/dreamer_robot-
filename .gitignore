@@ -1,0 +1,22 @@
+# cache / downloads
+.cache/
+*.part
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# editors / OS
+.vscode/
+.idea/
+*.DS_Store
+Thumbs.db
+
+# env
+.env
+*.env
